@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 feature 'Courses Page' do
+
+  before :each do
+    login_as FactoryGirl.create :user
+  end
+
   scenario 'Vists the page succesfully' do
     visit root_path
     expect(page).to have_css 'h1', text: 'Courses'
