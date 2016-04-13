@@ -1,4 +1,6 @@
 %h1 Courses
 %h2 My Courses
-%a(href='#') COM4513 Natural Langauge Processing
-%a(href="#") COM4519 Cloud Computing
+%ul
+  - @courses.each do |course|
+    %li
+      %a(href='#') #{course.title}
