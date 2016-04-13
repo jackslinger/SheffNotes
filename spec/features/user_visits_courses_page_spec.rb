@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Courses Page' do
 
   before :each do
-    login_as FactoryGirl.create :user
+    login_as FactoryGirl.create :user_with_course
   end
 
   scenario 'Vists the page succesfully' do
@@ -15,7 +15,7 @@ feature 'Courses Page' do
     #Login is not implemented yet so the system is mocked to represent one user
 
     visit root_path
-    expect(page).to have_link('COM4513 Natural Langauge Processing')
-    expect(page).to have_link('COM4519 Cloud Computing')
+    expect(page).to have_link('Natural Langauge Processing')
+    expect(page).to_not have_link('Speech Processing')
   end
 end
