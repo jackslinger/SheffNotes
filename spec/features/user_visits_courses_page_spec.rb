@@ -8,7 +8,7 @@ feature 'Courses Page' do
 
   scenario 'Vists the page succesfully' do
     visit root_path
-    expect(page).to have_css 'h1', text: 'Courses'
+    expect(page).to have_css 'h1', text: 'My Courses'
   end
 
   scenario 'Views courses that they are a part of' do
