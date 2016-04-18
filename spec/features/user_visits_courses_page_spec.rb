@@ -3,7 +3,11 @@ require 'rails_helper'
 feature 'Courses Page' do
 
   before :each do
-    login_as FactoryGirl.create :user_with_course
+    @not_part_of_course = FactoryGirl.create(:course, title: 'Speech Processing')
+    @part_of_course = FactoryGirl.create(:course, title: 'Natural Langauge Processing')
+    @user = FactoryGirl.create :user
+    @user.courses << @part_of_course
+    login_as @user
   end
 
   scenario 'Vists the page succesfully' do
@@ -12,10 +16,10 @@ feature 'Courses Page' do
   end
 
   scenario 'Views courses that they are a part of' do
-    #Login is not implemented yet so the system is mocked to represent one user
-
     visit root_path
-    expect(page).to have_link('Natural Langauge Processing')
-    expect(page).to_not have_link('Speech Processing')
+
+    expect(page).to have_link(@part_of_course.title)
+    expect(page).to_not have_link(@not_part_of_course.title)
   end
+
 end
