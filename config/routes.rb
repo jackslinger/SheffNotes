@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root to: 'courses#index'
-  get '/courses/:id', to: 'courses#show'
+
+  resources :courses, only: [:show]
+  resources :notes, expect: [:index]
 end
