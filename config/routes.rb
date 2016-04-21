@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :departments
+
   mount EpiCas::Engine, at: "/"
   devise_for :users
 

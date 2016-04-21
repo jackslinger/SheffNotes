@@ -2,19 +2,12 @@ class CoursesController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @courses = Course.all
   end
 
-  def show
-    @all_notes = Note.all
-    @my_notes = []
-    @other_notes = []
-
-    @all_notes.each do |note|
-      if note.user_id == current_user.id
-        @my_notes << note
-      else
-        @other_notes << note
-      end
-    end
+  def create
+    @course = Course.new
+    @course.title = 'New Course'
   end
+
 end
