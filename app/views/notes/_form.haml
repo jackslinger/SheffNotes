@@ -3,6 +3,6 @@
     = msg
 
 = form_for @note, url: notes_path, html: {multipart: true} do |form|
-  = form.text_field :title
-  = form.file_field :document, as: :file
-  = form.submit
+  = form.text_field :title, :class => 'form-control'
+  = form.file_field :document, as: :file, :class => 'form-control'
+  = form.submit :class => 'btn btn-primary'

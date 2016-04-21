@@ -1,11 +1,29 @@
-%h2 Notes
-%ul
-  - @other_notes.each do |note|
-    %li
-      = link_to "#{note.title}", note
-%h2 My Notes
-= link_to "Upload Notes", new_note_path
-%ul
-  - @my_notes.each do |note|
-    %li
-      = link_to "#{note.title}", note
+- content_for :title, @course.title
+
+.container
+  .toolbar-desktop
+    .row
+      .pull-left.text-left
+        = link_to @course.department, :class => 'btn' do
+          = fa_icon 'chevron-left'
+          Back
+      .pull-right.text-right
+        = link_to destroy_user_session_path, method: :delete, :class => 'btn' do
+          Log out
+    .clearfix
+
+  .row
+    - @course.notes.each do |note|
+      .col-sm-6.col-md-4
+        .panel.panel-default
+          .panel-heading
+            .panel-title
+              = note.title
+          .panel-body
+            = image_tag note.document.url(:large)
+
+.add-btn-offset
+
+.add-btn
+  = link_to new_note_path(course: @course.id) do
+    = image_tag '/images/add-btn.png', :class => 'img-circle'

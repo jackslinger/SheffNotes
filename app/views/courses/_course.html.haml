@@ -1,6 +1,6 @@
 %li.list-group-item.item{:id => "course-#{course.id}"}
   .row
-    .col-xs-12
+    .col-xs-10.left-section
       /.pull-left
       /  = link_to course, method: :delete, remote: true, :class => 'destroy-btn hidden hsp-md' do
       /    = fa_icon 'minus-circle'
@@ -8,3 +8,6 @@
         = course.title
       = form_for course, remote: true, :html => {:class => 'hidden', :id => "course-form-#{course.id}"} do |f|
         = f.text_field :title
+    .col-xs-2.right-section
+      = link_to course, :class => 'arrow-link' do
+        = fa_icon 'chevron-right'

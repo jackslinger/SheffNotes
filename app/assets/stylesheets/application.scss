@@ -117,15 +117,18 @@
    line-height: 2.5em;
  }
 
- .item .check-box {
+ .item .arrow-link {
    font-size: 1.5em;
    display: inline-block;
+   width: 100%;
    height: 100%;
-   padding: 0 0.5em;
+   padding: 0;
+   text-align: right;
  }
 
- .item .check-box i {
+ .item .arrow-link i {
    line-height: 1.8em;
+   margin-right: 0.5em;
  }
 
  .item .destroy-btn {
@@ -230,4 +233,41 @@
  .toolbar-desktop .btn:hover {
    color: #fff;
    background-color: #63B331;
+ }
+
+ .style-btn {
+   padding: 1em;
+   border-radius: 0;
+   border: 0.15em solid #fff;
+   background: none;
+   font-size: 1.5em;
+   color: #fff;
+ }
+
+ .style-btn:hover {
+   color: #fff;
+   background-color: #63B331;
+ }
+
+ .style-field {
+   font-size: 1.5em;
+   color: #fff;
+   border: 0.15em solid #fff;
+   padding: 1em;
+   border-radius: 0;
+   background: none;
+ }
+
+ .style-field:focus {
+   outline: none;
+ }
+
+ .form-inline {
+   .style-field {
+     width: 100%;
+     display: block;
+   }
+   .style-btn {
+     float: right;
+   }
  }

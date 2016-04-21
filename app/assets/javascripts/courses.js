@@ -30,7 +30,9 @@ function initializeItem(elem) {
   // Show form on click
   $(elem).on('click', function (e) {
     if ($(e.target).is('[data-remote]')
-      || $(e.target).parentsUntil('.item').is('[data-remote]'))
+      || $(e.target).parentsUntil('.item').is('[data-remote]')
+      || $(e.target).is('a')
+      || $(e.target).parentsUntil('.item').is('a'))
       return;
       setFormEnabled(this, true);
     e.stopPropagation();
