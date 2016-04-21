@@ -1,11 +1,10 @@
-- @all_notes.each do |note|
-  = note.title
 %h2 Notes
 %ul
   - @other_notes.each do |note|
     %li
       = link_to "#{note.title}", note
 %h2 My Notes
+= link_to "Upload Notes", new_note_path
 %ul
   - @my_notes.each do |note|
     %li
