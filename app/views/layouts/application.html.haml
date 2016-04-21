@@ -1,10 +1,11 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}
     %title SheffNotes
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag :defaults
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
     .flash-messages
@@ -19,20 +20,8 @@
             = msg
             %a{ href: '#', title: 'Hide this message', data: { dismiss: :alert } } Dismiss
 
-    #wrap.contianer
-      %nav#main-nav.navbar.navbar-default
-        .container
-          .navbar-header
-            %button.navbar-toggle{ data: { target: ".navbar-collapse", toggle: :collapse, type: :button } }
-            %a.navbar-brand(href="#") Sheff Notes
-          #navbar.navbar-collapse.collapse
-            %ul.nav.navbar-nav
-              %li
-                %a(href="#")Home
-              %li
-                %a(href="#")Courses
-            %ul.nav.navbar-nav.pull-right
-              %li
-                = button_to "Log Out", destroy_user_session_path, method: :delete
+    %h1#titlebar
+      %span
+        Notes
 
-      = yield
+    = yield

@@ -1,0 +1,6 @@
+= link_to new_note_path, :class => 'btn btn-primary' do
+  New note
+
+- @notes.each do |note|
+  = link_to note do
+    = image_tag note.document.url(:thumb)

@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+   background-color: #7DD240;
+   color: white;
+ }
+
+ .file-field-hidden {
+   // file fields cannot be display: none or they will not work
+   position: fixed;
+   top: 10000px;
+ }
+
+ #titlebar {
+   background-color: #63B331;
+   color: white;
+   margin: 0 0 0.75em 0;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 4em;
+   border-bottom: 0.15em solid white;
+ }
+
+ #titlebar span {
+   position: relative;
+   margin-left: 0.1em;
+   bottom: -0.22em;
+ }
+
+ .add-btn img {
+   background-color: white;
+   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
