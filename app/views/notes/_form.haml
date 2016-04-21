@@ -1,3 +1,7 @@
+- @note.errors.full_messages.each do |msg|
+  %p
+    = msg
+
 = form_for @note, url: notes_path, html: {multipart: true} do |form|
   = form.text_field :title
   = form.file_field :document, as: :file

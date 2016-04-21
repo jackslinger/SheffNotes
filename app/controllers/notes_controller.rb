@@ -1,5 +1,10 @@
 class NotesController < ApplicationController
   load_and_authorize_resource
+  before_action :set_note, only: [:show, :edit, :update]
+
+  def index
+    @notes = Note.all # restrict to user in future
+  end
 
   def show
   end
@@ -11,16 +16,27 @@ class NotesController < ApplicationController
   end
 
   def create
-    @note = Note.create( note_params )
+    @note = Note.new(note_params)
+    if @note.save
+      flash[:notice] = 'Your note has been saved successfully'
+      redirect_to @note
+    else
+      flash[:alert] = 'Please fix the errors in the form'
+      render :new
+    end
   end
 
   def update
-    @note = Note.create( note_params )
   end
 
   private
 
-  def note_params
-    params.require(:note).permit(:document)
-  end
+    def set_note
+      @note = Note.find(params[:id])
+    end
+
+    def note_params
+      params.require(:note).permit(:document)
+    end
+
 end
