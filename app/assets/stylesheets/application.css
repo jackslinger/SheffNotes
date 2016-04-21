@@ -31,13 +31,37 @@
    margin: 0 0 0.75em 0;
    font-family: 'Open Sans', sans-serif;
    font-size: 4em;
-   border-bottom: 0.15em solid white;
+   display: block;
+   height: 70px;
+   border-bottom: 10px solid white;
  }
 
  #titlebar span {
    position: relative;
    margin-left: 0.1em;
    bottom: -0.21em;
+ }
+
+ #titlebar .top-right-btn {
+   border-left: 10px solid white;
+   float: right;
+   display: block;
+   height: 60px;
+   color: white;
+   background-color: #7DD240;
+   font-size: 0.5em;
+   padding: 0 1em;
+ }
+
+ #titlebar .top-right-btn:hover {
+   background-color: #63B331;
+   text-decoration: none;
+ }
+
+ #titlebar .top-right-btn span {
+   position: static;
+   bottom: auto;
+   line-height: 60px;
  }
 
  .add-btn img {

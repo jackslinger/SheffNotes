@@ -8,10 +8,18 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
+
+    %h1#titlebar
+      %span
+        = yield :title
+      = link_to destroy_user_session_path, method: :delete, :class => 'top-right-btn' do
+        %span
+          Log out
+
     .flash-messages
       - flash.each do |name, msg|
         - next unless name == 'alert' || name == 'notice'
-        .alert.fade.in
+        .alert.alert-dismissible
           .container
             - if name == 'notice'
               = fa_icon('check', class: 'flash-success')
@@ -19,10 +27,6 @@
               = fa_icon('warning', class: 'flash-error')
             = msg
             %a{ href: '#', title: 'Hide this message', data: { dismiss: :alert } } Dismiss
-
-    %h1#titlebar
-      %span
-        = yield :title
 
     .container
       = yield
