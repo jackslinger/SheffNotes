@@ -1,0 +1,5 @@
+= render :partial => 'courses/list', :locals => {:department => @department}
+
+.add-btn
+  = link_to add_course_path(@department), remote: true do
+    = image_tag '/images/add-btn.png', :class => 'img-circle'

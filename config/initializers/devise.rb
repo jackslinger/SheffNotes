@@ -1,32 +1,17 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  # ==> CAS configuration
-  # Use CAS to log in, location configured in epi_cas_settings.yml
-  config.cas_base_url = EpiCas::Settings.cas_base_url
-  # Redirect log out to app logout page, which then uses CAS to log out
-  config.cas_logout_url = EpiCas::Settings.app_logout_url
-  config.cas_logout_url_param = 'destination'
-  config.cas_enable_single_sign_out = true
-
-  config.authentication_keys = [:username]
-  # By default, devise_cas_authenticatable will create users.  If you would rather
-  # require user records to already exist locally before they can authenticate via
-  # CAS, uncomment the following line:
-  # config.cas_create_user = false
-
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'f326caeb956bf1b191fe904e41a697af940aa2a9c33e0681d5fda637181a5c5bd23371f9857285453b74eadb866b296e92c489e122de71daa2c978ab778dbcbb'
-
+  # config.secret_key = 'e906117053a5a5a39d91141f41055d489519914a3a0fe55aafa5facc58df2a0fc68246d1289c2fb7e0632ffa6f2e8abac65aba79f12a0d76e8d9b5c3142b3ff2'
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'My App <no-reply@sheffield.ac.uk>'
+  config.mailer_sender = 'no-reply@sheffield.ac.uk'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -57,12 +42,12 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [:username]
+  config.case_insensitive_keys = [:email]
 
   # Configure which authentication keys should have whitespace stripped.
   # These keys will have whitespace before and after removed upon creating or
   # modifying a user and when used to authenticate or find a user. Default is :email.
-  config.strip_whitespace_keys = [:username]
+  config.strip_whitespace_keys = [:email]
 
   # Tell if authentication through request.params is enabled. True by default.
   # It can be set to an array that will enable params authentication only for the
@@ -113,7 +98,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '207518f2d9294e185e6cd0eebce20eb84ce2ff93bc9f4df3a6bc46c7ca35ce2b3b90b3392609f3b74405db48c26a1dc7a27f4ecaad81bb90f8d6a076c7b8c107'
+  # config.pepper = 'c76e12b254c7d5cebb6450336b5b38c09326a3a23ae19a24873bba6ec2276e4c2855c05ac00a34ce4a20939cce58fa1854e9cbf0df51542d8429933758cb097e'
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false
