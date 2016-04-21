@@ -22,6 +22,7 @@
 
     %h1#titlebar
       %span
-        Notes
+        = yield :title
 
-    = yield
+    .container
+      = yield
