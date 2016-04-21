@@ -6,6 +6,6 @@ Rails.application.routes.draw do
 
   root to: 'courses#index'
 
-  resources :courses, only: [:show]
+  resources :courses, only: [:show, :create, :new]
   resources :notes, expect: [:index]
 end

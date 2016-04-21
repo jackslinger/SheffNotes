@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20160421113617) do
 
   create_table "courses", force: true do |t|
     t.string   "title"
-    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "department_id"
@@ -29,13 +28,6 @@ ActiveRecord::Schema.define(version: 20160421113617) do
 
 # Could not dump table "notes" because of following NoMethodError
 #   undefined method `[]' for nil:NilClass
-
-  create_table "participations", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "course_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "users", force: true do |t|
     t.string   "email",              default: "", null: false

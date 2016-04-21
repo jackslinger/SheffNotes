@@ -6,7 +6,6 @@ feature 'Courses Page' do
     @not_part_of_course = FactoryGirl.create(:course, title: 'Speech Processing')
     @part_of_course = FactoryGirl.create(:course, title: 'Natural Langauge Processing')
     @user = FactoryGirl.create :user
-    @user.courses << @part_of_course
     login_as @user
   end
 
@@ -15,11 +14,11 @@ feature 'Courses Page' do
     expect(page).to have_css 'h1', text: 'My Courses'
   end
 
-  scenario 'Views courses that they are a part of' do
+  scenario 'Views all the courses available' do
     visit root_path
 
     expect(page).to have_link(@part_of_course.title)
-    expect(page).to_not have_link(@not_part_of_course.title)
+    expect(page).to have_link(@not_part_of_course.title)
   end
 
 end
