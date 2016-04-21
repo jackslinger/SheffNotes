@@ -1,7 +1,11 @@
 class CoursesController < ApplicationController
+  load_and_authorize_resource
 
   def index
-    @courses = Course.all
+  end
+
+  #Remove when ajax creating is added
+  def new
   end
 
   def show
@@ -20,9 +24,10 @@ class CoursesController < ApplicationController
 
   def create
     @note = Course.create( course_params )
+    #Add render or redirect to original page
   end
 
   def course_params
-    params.require(:note).permit(:title, :description)
+    params.require(:course).permit(:title)
   end
 end
