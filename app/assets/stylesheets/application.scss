@@ -37,21 +37,21 @@
    font-family: 'Open Sans', sans-serif;
    font-size: 4em;
    display: block;
-   height: 70px;
+   min-height: 75px;
    border-bottom: 10px solid white;
  }
 
  #titlebar span {
    position: relative;
    margin-left: 0.1em;
-   bottom: -0.15em;
+   bottom: -0.23em;
  }
 
  #titlebar .top-right-btn {
    border-left: 10px solid white;
    float: right;
    display: block;
-   height: 60px;
+   height: 65px;
    color: white;
    background-color: #7DD240;
    font-size: 0.5em;
@@ -69,9 +69,24 @@
    line-height: 60px;
  }
 
- .add-btn img {
-   background-color: white;
-   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ .add-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+
+  img {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+  }
+
+ }
+
+ .add-btn-offset {
+   display: block;
+   height: 120px;
  }
 
  .item {
@@ -161,4 +176,58 @@
 
  .item .row {
    padding: 0 15px;
+ }
+
+ .toolbar {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   margin: 0;
+   background-color: #FFBD17;
+   border-bottom: 5px solid white;
+   height: 50px;
+   z-index: 1000;
+ }
+
+ .toolbar .btn {
+   border: none;
+   border-radius: 0;
+   background: none;
+   color: #fff;
+   font-size: 1.2em;
+   line-height: 45px;
+   padding: 0 2em;
+   box-shadow: none !important;
+ }
+
+ .toolbar .btn:hover, .toolbar .btn:active {
+   color: #fff;
+   background-color: #63B331;
+ }
+
+ .toolbar-offset {
+   height: 50px;
+   display: block;
+ }
+
+ .toolbar-desktop {
+   margin-bottom: 1em;
+ }
+
+ .toolbar-desktop .row {
+   width: 100%;
+ }
+
+ .toolbar-desktop .btn {
+   padding: 1em;
+   border-radius: 0;
+   border: 0.15em solid #fff;
+   background: none;
+   font-size: 1.5em;
+   color: #fff;
+ }
+
+ .toolbar-desktop .btn:hover {
+   color: #fff;
+   background-color: #63B331;
  }

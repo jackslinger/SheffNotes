@@ -1,10 +1,5 @@
 - content_for :title, "#{department.name} Courses"
 
-%ul.list-group
+%ul.list-group#courses
   - department.courses.each do |course|
-    = link_to course do
-      %li.list-group-item.item
-        .row
-          .col-xs-12.left-section
-            %span.name
-              = course.title
+    = render :partial => 'courses/course', :locals => {:course => course}

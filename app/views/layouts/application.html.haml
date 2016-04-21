@@ -12,9 +12,6 @@
     %h1#titlebar
       %span
         = yield :title
-      = link_to destroy_user_session_path, method: :delete, :class => 'top-right-btn' do
-        %span
-          Log out
 
     .flash-messages
       - flash.each do |name, msg|

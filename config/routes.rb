@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   root to: 'departments#index'
 
-  resources :courses, only: [:show, :create, :new]
+  resources :courses, only: [:show, :create, :update]
   resources :notes, expect: [:index]
 
-  get 'departments/:id/add-course' => 'course#create', :as => 'add_course'
+  get 'departments/:department_id/add-course' => 'courses#add', :as => 'add_course'
 end

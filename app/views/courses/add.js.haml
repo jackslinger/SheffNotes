@@ -1,0 +1,8 @@
+var course = $('#{j render :partial => "course", :locals => {:course => @course}}');
+$('#courses').append(course);
+course.css('display', 'none');
+course.fadeIn(500);
+initializeItem('#course-' + #{@course.id});
+$('html, body').animate({
+scrollTop: item.offset().top
+}, 500);
