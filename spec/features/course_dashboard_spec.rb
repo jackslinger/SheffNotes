@@ -7,7 +7,6 @@ feature 'Course Dashboard' do
     @user = FactoryGirl.create :user
     @my_note = FactoryGirl.create :note, user: @user
     @other_note = FactoryGirl.create :note, title: 'Lecture 2'
-    @user.courses << @course
     login_as @user
   end
 

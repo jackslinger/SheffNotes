@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
-  load_and_authorize_resource
 
   def index
+    @courses = Course.all
   end
 
   def show
@@ -16,5 +16,13 @@ class CoursesController < ApplicationController
         @other_notes << note
       end
     end
+  end
+
+  def create
+    @note = Course.create( course_params )
+  end
+
+  def course_params
+    params.require(:note).permit(:title, :description)
   end
 end
