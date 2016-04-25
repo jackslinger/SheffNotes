@@ -5,13 +5,23 @@ class NotesController < ApplicationController
   end
 
   def new
+    @courses = Course.all
   end
 
   def edit
   end
 
   def create
-    @note = Note.create( note_params )
+    @courses = Course.all
+    @note = Note.new(note_params)
+    @note.user = current_user if current_user
+    if @note.save
+      flash[:notice] = 'Your note has been saved successfully'
+      redirect_to @note
+    else
+      flash[:alert] = 'Please fix the errors in the form'
+      render :new
+    end
   end
 
   def update
@@ -20,7 +30,12 @@ class NotesController < ApplicationController
 
   private
 
-  def note_params
-    params.require(:note).permit(:document)
-  end
+    def set_note
+      @note = Note.find(params[:id])
+    end
+
+    def note_params
+      params.require(:note).permit(:document, :course_id, :title)
+    end
+
 end
