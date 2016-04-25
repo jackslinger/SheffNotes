@@ -14,7 +14,7 @@ feature 'Courses Page' do
     expect(page).to have_css 'h1', text: 'My Courses'
   end
 
-  scenario 'Views all the courses available' do
+  scenario 'Views all courses' do
     visit root_path
 
     expect(page).to have_link(@part_of_course.title)

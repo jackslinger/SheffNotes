@@ -10,13 +10,16 @@ class NotesController < ApplicationController
   end
 
   def new
+    @courses = Course.all
   end
 
   def edit
   end
 
   def create
+    @courses = Course.all
     @note = Note.new(note_params)
+    @note.user = current_user if current_user
     if @note.save
       flash[:notice] = 'Your note has been saved successfully'
       redirect_to @note
@@ -36,7 +39,7 @@ class NotesController < ApplicationController
     end
 
     def note_params
-      params.require(:note).permit(:document)
+      params.require(:note).permit(:document, :course_id, :title)
     end
 
 end
