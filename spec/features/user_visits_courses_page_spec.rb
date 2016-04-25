@@ -15,11 +15,11 @@ feature 'Courses Page' do
     expect(page).to have_css 'h1', text: 'My Courses'
   end
 
-  scenario 'Views courses that they are a part of' do
+  scenario 'Views all courses' do
     visit root_path
 
     expect(page).to have_link(@part_of_course.title)
-    expect(page).to_not have_link(@not_part_of_course.title)
+    expect(page).to have_link(@not_part_of_course.title)
   end
 
 end
