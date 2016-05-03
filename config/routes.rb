@@ -9,4 +9,5 @@ Rails.application.routes.draw do
 
   get 'departments/:department_id/add-course' => 'courses#add', :as => 'add_course'
   get 'my-notes' => 'notes#my_notes', :as => 'my_notes'
+
 end
