@@ -1,8 +1,10 @@
 %h1 Name your notes
 
-= form_for @note do |form|
+= form_for @note, url: notes_path, html: {multipart: true} do |form|
   .row.form-inline
     .col-xs-10
       = form.text_field :title, :class => 'style-field'
+      = form.file_field :document, as: :file, :class => 'form-control'
+      = form.hidden_field :course_id, value: course_id
     .col-xs-2
       = form.submit 'Continue', :class => 'style-btn'

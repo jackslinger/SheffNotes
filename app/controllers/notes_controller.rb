@@ -23,6 +23,9 @@ class NotesController < ApplicationController
     @courses = Course.all
     @note = Note.new(note_params)
     @note.user = current_user if current_user
+    puts 'foo'
+    puts current_user
+    puts @note.valid?
     if @note.save
       flash[:notice] = 'Your note has been saved successfully'
       redirect_to @note

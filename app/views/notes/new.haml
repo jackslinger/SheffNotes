@@ -12,4 +12,5 @@
           Log out
     .clearfix
 
-= render 'form_part_1'
+    = render 'form_part_1', course_id: @note.course_id
+    -# = render partial: 'form_part_1', collection: @form_part_1, locals: {course_id: @note.course.id}
