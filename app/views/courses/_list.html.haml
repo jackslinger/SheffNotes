@@ -1,0 +1,5 @@
+- content_for :title, "#{department.name} Courses"
+
+%ul.list-group#courses
+  - department.courses.each do |course|
+    = render :partial => 'courses/course', :locals => {:course => course}

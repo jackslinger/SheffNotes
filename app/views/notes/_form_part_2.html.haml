@@ -1,0 +1,4 @@
+= form_for @note, html: {multipart: true} do |form|
+  / instead, display sample image and ajax upload to the note (having previously saved it)
+  = form.file_field :document, as: :file, :class => 'form-control'
+  = form.submit :class => 'btn btn-primary'

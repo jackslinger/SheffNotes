@@ -1,0 +1,2 @@
+$('#course-' + #{@course.id}).replaceWith('#{j render :partial => "course", :locals => {:course => @course}}');
+initializeItem('#course-' + #{@course.id});

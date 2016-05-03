@@ -1,0 +1,273 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require font-awesome
+ *= require_tree .
+ *= require_self
+ */
+
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+ @import 'bootstrap-sprockets';
+ @import 'bootstrap';
+
+ body {
+   background-color: #7DD240;
+   color: white;
+ }
+
+ .file-field-hidden {
+   // file fields cannot be display: none or they will not work
+   position: fixed;
+   top: 10000px;
+ }
+
+ #titlebar {
+   background-color: #63B331;
+   color: white;
+   margin: 0 0 0.75em 0;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 4em;
+   display: block;
+   min-height: 75px;
+   border-bottom: 10px solid white;
+ }
+
+ #titlebar span {
+   position: relative;
+   margin-left: 0.1em;
+   bottom: -0.23em;
+ }
+
+ #titlebar .top-right-btn {
+   border-left: 10px solid white;
+   float: right;
+   display: block;
+   height: 65px;
+   color: white;
+   background-color: #7DD240;
+   font-size: 0.5em;
+   padding: 0 1em;
+ }
+
+ #titlebar .top-right-btn:hover {
+   background-color: #63B331;
+   text-decoration: none;
+ }
+
+ #titlebar .top-right-btn span {
+   position: static;
+   bottom: auto;
+   line-height: 60px;
+ }
+
+ .add-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+
+  img {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+  }
+
+ }
+
+ .add-btn-offset {
+   display: block;
+   height: 120px;
+ }
+
+ .item {
+   background-color: white;
+   color: #555;
+   padding: 0;
+   margin: 5px 0;
+   font-size: 1.8em;
+ }
+
+ .item .left-section {
+   display: block;
+   height: 2.5em;
+   text-align: left;
+   padding: 0;
+ }
+
+ .item .right-section {
+   display: block;
+   height: 2.5em;
+   text-align: right;
+   padding: 0;
+ }
+
+ .item .name, .item form {
+   margin-left: 1em;
+   display: block;
+   line-height: 2.5em;
+ }
+
+ .item .arrow-link {
+   font-size: 1.5em;
+   display: inline-block;
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   text-align: right;
+ }
+
+ .item .arrow-link i {
+   line-height: 1.8em;
+   margin-right: 0.5em;
+ }
+
+ .item .destroy-btn {
+   font-size: 1.5em;
+   display: inline-block;
+   height: 100%;
+   padding: 0 0.5em;
+   margin: 0;
+ }
+
+ .item .destroy-btn i {
+   line-height: 1.8em;
+ }
+
+ .item .destroy-btn:link {
+   color: #b22;
+   text-decoration: none;
+ }
+
+ .item .destroy-btn:visited {
+   color: #b22;
+   text-decoration: none;
+ }
+
+ .item .destroy-btn:hover {
+   color: #b55;
+   text-decoration: none;
+ }
+
+ .item input[type="text"] {
+   width: 100%;
+   box-sizing: border-box;
+   border: none;
+   padding: 0 0 0 1em;
+   margin: 0;
+ }
+
+ .item input:focus {
+   outline: none;
+ }
+
+ .item form {
+   display: block;
+   overflow: hidden;
+   padding: 0;
+   margin: 0;
+ }
+
+ .item .row {
+   padding: 0 15px;
+ }
+
+ .toolbar {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   margin: 0;
+   background-color: #FFBD17;
+   border-bottom: 5px solid white;
+   height: 50px;
+   z-index: 1000;
+ }
+
+ .toolbar .btn {
+   border: none;
+   border-radius: 0;
+   background: none;
+   color: #fff;
+   font-size: 1.2em;
+   line-height: 45px;
+   padding: 0 2em;
+   box-shadow: none !important;
+ }
+
+ .toolbar .btn:hover, .toolbar .btn:active {
+   color: #fff;
+   background-color: #63B331;
+ }
+
+ .toolbar-offset {
+   height: 50px;
+   display: block;
+ }
+
+ .toolbar-desktop {
+   margin-bottom: 1em;
+ }
+
+ .toolbar-desktop .row {
+   width: 100%;
+ }
+
+ .toolbar-desktop .btn {
+   padding: 1em;
+   border-radius: 0;
+   border: 0.15em solid #fff;
+   background: none;
+   font-size: 1.5em;
+   color: #fff;
+ }
+
+ .toolbar-desktop .btn:hover {
+   color: #fff;
+   background-color: #63B331;
+ }
+
+ .style-btn {
+   padding: 1em;
+   border-radius: 0;
+   border: 0.15em solid #fff;
+   background: none;
+   font-size: 1.5em;
+   color: #fff;
+ }
+
+ .style-btn:hover {
+   color: #fff;
+   background-color: #63B331;
+ }
+
+ .style-field {
+   font-size: 1.5em;
+   color: #fff;
+   border: 0.15em solid #fff;
+   padding: 1em;
+   border-radius: 0;
+   background: none;
+ }
+
+ .style-field:focus {
+   outline: none;
+ }
+
+ .form-inline {
+   .style-field {
+     width: 100%;
+     display: block;
+   }
+   .style-btn {
+     float: right;
+   }
+ }

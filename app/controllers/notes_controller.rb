@@ -10,10 +10,13 @@ class NotesController < ApplicationController
   end
 
   def new
-    @courses = Course.all
+    @note.course = Course.find(params[:course])
   end
 
   def edit
+  end
+
+  def my_notes
   end
 
   def create

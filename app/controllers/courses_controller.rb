@@ -1,34 +1,28 @@
 class CoursesController < ApplicationController
-  load_and_authorize_resource
-
-  def index
-    @courses = Course.all
-  end
-
-  #Remove when ajax creating is added
-  def new
-  end
+  before_filter :set_course, only: [:show, :update]
 
   def show
-    @all_notes = Note.all
-    @my_notes = []
-    @other_notes = []
+  end
 
-    @all_notes.each do |note|
-      if note.user_id == current_user.id
-        @my_notes << note
-      else
-        @other_notes << note
-      end
+  def add
+    @department = Department.find(params[:department_id])
+    @course = Course.new
+    @course.department_id = @department.id
+    @course.title = 'Unnamed Course'
+    @course.save
+  end
+
+  def update
+    @course.update(course_params)
+  end
+
+  private
+
+    def set_course
+      @course = Course.find(params[:id])
     end
-  end
 
-  def create
-    @note = Course.create( course_params )
-    #Add render or redirect to original page
-  end
-
-  def course_params
-    params.require(:course).permit(:title)
-  end
+    def course_params
+      params.require(:course).permit(:title)
+    end
 end

@@ -1,0 +1,19 @@
+.container
+  .toolbar-desktop
+    .row
+      .pull-left.text-left
+        = link_to departments_path, :class => 'btn' do
+          = fa_icon 'chevron-left'
+          Back
+      .pull-right.text-right
+        = link_to destroy_user_session_path, method: :delete, :class => 'btn' do
+          Log out
+    .clearfix
+
+= render :partial => 'courses/list', :locals => {:department => @department}
+
+.add-btn-offset
+
+.add-btn
+  = link_to add_course_path(@department), remote: true do
+    = image_tag '/images/add-btn.png', :class => 'img-circle'

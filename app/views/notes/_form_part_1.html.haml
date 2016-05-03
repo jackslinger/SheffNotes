@@ -1,0 +1,8 @@
+%h1 Name your notes
+
+= form_for @note do |form|
+  .row.form-inline
+    .col-xs-10
+      = form.text_field :title, :class => 'style-field'
+    .col-xs-2
+      = form.submit 'Continue', :class => 'style-btn'
