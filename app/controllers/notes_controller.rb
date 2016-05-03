@@ -28,7 +28,7 @@ class NotesController < ApplicationController
     puts @note.valid?
     if @note.save
       flash[:notice] = 'Your note has been saved successfully'
-      redirect_to @note
+      redirect_to @note.course
     else
       flash[:alert] = 'Please fix the errors in the form'
       render :new
