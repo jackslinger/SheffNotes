@@ -14,15 +14,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
-gem 'devise'
 
 gem 'factory_girl_rails'
 
 gem 'cancancan'
 
 gem 'paperclip'
-
-gem 'pdfjs_viewer-rails'
 
 group :development, :test do
   gem 'rspec-rails'

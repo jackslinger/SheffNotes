@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :departments
-  devise_for :users
 
   root to: 'departments#index'
 

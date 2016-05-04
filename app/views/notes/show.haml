@@ -7,9 +7,6 @@
         = link_to @note.course, :class => 'btn' do
           = fa_icon 'chevron-left'
           Back
-      .pull-right.text-right
-        = link_to destroy_user_session_path, method: :delete, :class => 'btn' do
-          Log out
     .clearfix
 
 = link_to @note.document_file_name, @note.document.url
