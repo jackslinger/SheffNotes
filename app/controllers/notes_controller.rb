@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  # load_and_authorize_resource   cancancan is not working with no current_user
+  load_and_authorize_resource   #cancancan is not working with no current_user
   before_action :set_note, only: [:show, :edit, :update]
 
   def index
@@ -10,7 +10,6 @@ class NotesController < ApplicationController
   end
 
   def new
-    @note = Note.new
     @note.course = Course.find(params[:course])
   end
 
