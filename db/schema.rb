@@ -26,7 +26,16 @@ ActiveRecord::Schema.define(version: 20160421113617) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "notes" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "notes", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.integer  "user_id"
+    t.integer  "course_id"
+  end
 
 end

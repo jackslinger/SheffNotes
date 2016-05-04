@@ -18,4 +18,5 @@
 
 .add-btn
   = link_to new_note_path(course: @course.id) do
-    = image_tag '/images/add-btn.png', :class => 'img-circle'
+    %i{class: "fa fa-plus", style: "font-size:40px;"}
+    -# = image_tag '/images/add-btn.png', :class => 'img-circle'

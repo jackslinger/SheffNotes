@@ -1,10 +1,1 @@
-.container
-  .toolbar-desktop.hidden-xs
-    .row
-      .pull-left.text-left
-        = link_to my_notes_path, :class => 'btn' do
-          = fa_icon 'file-text-o'
-          My Notes
-    .clearfix
-
 = render :partial => 'list', :locals => {:departments => @departments}
