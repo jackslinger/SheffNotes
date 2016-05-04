@@ -1,0 +1,13 @@
+%li.list-group-item.item{:id => "note-#{note.id}"}
+  .row
+    .col-xs-10.left-section
+      /.pull-left
+      /  = link_to course, method: :delete, remote: true, :class => 'destroy-btn hidden hsp-md' do
+      /    = fa_icon 'minus-circle'
+      %span.name
+        = note.title
+      = form_for note, remote: true, :html => {:class => 'hidden', :id => "note-form-#{note.id}"} do |f|
+        = f.text_field :title
+    .col-xs-2.right-section
+      = link_to note, :class => 'arrow-link' do
+        = fa_icon 'chevron-right'

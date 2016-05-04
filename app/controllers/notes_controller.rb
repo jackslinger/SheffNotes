@@ -36,6 +36,7 @@ class NotesController < ApplicationController
   end
 
   def update
+    @note.update(note_params)
   end
 
   private
