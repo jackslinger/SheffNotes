@@ -9,5 +9,5 @@
       = form_for note, remote: true, :html => {:class => 'hidden', :id => "note-form-#{note.id}"} do |f|
         = f.text_field :title
     .col-xs-2.right-section
-      = link_to note, :class => 'arrow-link' do
+      = link_to note.document.url, :class => 'arrow-link', :target => '_blank' do
         = fa_icon 'chevron-right'
